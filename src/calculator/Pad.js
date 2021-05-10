@@ -13,6 +13,8 @@ const useStyles = createUseStyles({
         justifyContent: 'center',
         alignItems: 'center',
         margin: 1,
+        cursor: 'pointer',
+        userSelect: 'none',
 
         '&:hover': {
             margin: 0,

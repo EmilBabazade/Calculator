@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {createUseStyles} from 'react-jss'
 import Pad from './Pad'
 
@@ -41,6 +41,14 @@ const useStyles = createUseStyles({
 })
 
 const Calculator = () => {
+    const [input, setInput] = useState('')
+    const [operation, setOperation] = useState('')
+    const [display, setDisplay] = useState('')
+
+    const handleClick = (evt) => {
+        console.log(evt.target.value)
+    }
+
     const styles = useStyles()
     
     const numberBG = '#4d4d4d'
@@ -50,11 +58,11 @@ const Calculator = () => {
     return(
         <div className={styles.calculator}>
             <div className={styles.display}>
-                <div className={styles.output}>11 + 11</div>
-                <div className={styles.input}>22</div>
+                <div className={styles.output}>{display}</div>
+                <div className={styles.input}>{input}</div>
             </div>
 
-            <Pad bg={acBG} character='AC' column='1/3' row='2' color={FONT_COLOR} />
+            <Pad bg={acBG} onClick={handleClick} character='AC' column='1/3' row='2' color={FONT_COLOR} />
             <Pad bg={operationBG} character='/' column='3' row='2' color={FONT_COLOR} />
             <Pad bg={operationBG} character='X' column='4' row='2' color={FONT_COLOR} />
 
