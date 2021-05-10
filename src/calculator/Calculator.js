@@ -20,11 +20,34 @@ const useStyles = createUseStyles({
 const Calculator = () => {
     const styles = useStyles()
     
+    const numberBG = '#4d4d4d'
+    const operationBG = '#666666'
+    const acBG = '#ac3939'
+    const equalsBg = '#004466'
+    const color = '#f4f4f4'
     return(
         <div className={styles.calculator}>
-            <Pad bg='#4d4d4d' character='8' column='2' row='3' color='#f4f4f4' />
-            <Pad bg='#4d4d4d' character='7' column='1' row='3' color='#f4f4f4' />
-            <Pad bg='#4d4d4d' character='4' column='1' row='4' color='#f4f4f4' />
+            <Pad bg={acBG} character='AC' column='1/3' row='2' color={color} />
+            <Pad bg={operationBG} character='/' column='3' row='2' color={color} />
+            <Pad bg={operationBG} character='X' column='4' row='2' color={color} />
+
+            <Pad bg={numberBG} character='7' column='1' row='3' color={color} />
+            <Pad bg={numberBG} character='8' column='2' row='3' color={color} />
+            <Pad bg={numberBG} character='9' column='3' row='3' color={color} />
+            <Pad bg={operationBG} character='-' column='4' row='3' color={color} />
+            
+            <Pad bg={numberBG} character='4' column='1' row='4' color={color} />
+            <Pad bg={numberBG} character='5' column='2' row='4' color={color} />
+            <Pad bg={numberBG} character='6' column='3' row='4' color={color} />
+            <Pad bg={operationBG} character='+' column='4' row='4' color={color} />
+
+            <Pad bg={numberBG} character='1' column='1' row='5' color={color} />
+            <Pad bg={numberBG} character='2' column='2' row='5' color={color} />
+            <Pad bg={numberBG} character='3' column='3' row='5' color={color} />
+            <Pad bg={equalsBg} character='=' column='4' row='5/7' color={color} />
+
+            <Pad bg={numberBG} character='0' column='1/3' row='6' color={color} />
+            <Pad bg={numberBG} character='.' column='3' row='6' color={color} />
         </div>
     )
 }
