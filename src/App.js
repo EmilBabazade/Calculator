@@ -1,6 +1,7 @@
 import React from 'react'
 import {createUseStyles} from 'react-jss'
 import 'jss-plugin-global'
+import Calculator from './calculator/Calculator'
 
 const useStyles = createUseStyles({
     '@global': {
@@ -17,12 +18,24 @@ const useStyles = createUseStyles({
             boxSizing: 'inherit'
         }
     },
+    container: {
+        backgroundColor: '#c2c2d6',
+        width: '100%',
+        height: '100%',
+        padding: 0,
+        margin: 0,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }
 })
 
 const App = () => {
+    const styles = useStyles()
+
     return (
-        <div>
-      hello
+        <div className={styles.container}>
+            <Calculator />
         </div>
     )
 }
