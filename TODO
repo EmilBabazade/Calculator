@@ -1,5 +1,6 @@
 initial - DONE
 calculator position - DONE
-4 x 6 grid
+4 x 6 grid - DONE
 pad 80 x 65 pixels
     -> columns, rows, character, color, background color
+    -> onclick border change
