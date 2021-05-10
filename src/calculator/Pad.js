@@ -12,7 +12,13 @@ const useStyles = createUseStyles({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        margin: 1
+        margin: 1,
+
+        '&:hover': {
+            margin: 0,
+            color: '#000000',
+            border: '1px solid grey'
+        }
     }
 })
 
