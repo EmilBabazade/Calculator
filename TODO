@@ -1,0 +1,5 @@
+initial
+calculator position
+4 x 6 grid
+pad 80 x 65 pixels
+    -> columns, rows, character, color, background color
