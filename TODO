@@ -1,6 +1,7 @@
 initial - DONE
 calculator position - DONE
 4 x 6 grid - DONE
+    grid gap instead of margins
 pad 80 x 65 pixels
     -> columns, rows, character, color, background color - DONE
     -> on hover border change - DONE

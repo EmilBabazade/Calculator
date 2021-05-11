@@ -25,12 +25,12 @@ const useStyles = createUseStyles({
 })
 
 const Pad = ({
-    column, row, character, bg, color
+    column, row, character, bg, color, onClick
 }) => {
     const styles = useStyles({column, row, bg, color})
 
     return (
-        <div className={styles.pad}>{character}</div>
+        <div onClick={onClick} className={styles.pad}>{character}</div>
     )
 }
 
@@ -39,7 +39,8 @@ Pad.propTypes = {
     row: PropTpes.number.isRequired,
     character: PropTpes.string.isRequired,
     bg: PropTpes.string.isRequired,
-    color: PropTpes.string.isRequired
+    color: PropTpes.string.isRequired,
+    onClick: PropTpes.func.isRequired
 }
 
 export default Pad
