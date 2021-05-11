@@ -5,5 +5,6 @@ calculator position - DONE
 pad 80 x 65 pixels
     -> columns, rows, character, color, background color - DONE
     -> on hover border change - DONE
+delete button
 calculator input
 calculator display - DONE

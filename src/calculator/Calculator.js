@@ -62,13 +62,36 @@ const Calculator = () => {
         // set input
         setInput(input)
         // set operation
-        if(isNaN(parseFloat(input)) && (input !== '.')) {
-            // if this input and last input was an operation delete the last input
-            if(isNaN(parseFloat(operation[operation.length - 1]))) {
+        const previousInput = operation[operation.length - 1]
+        const isInputDot = input === '.'
+        const isInputNotANumber = isNaN(parseFloat(input))
+        const isPrevInputNotANumber = isNaN(parseFloat(previousInput))
+        // if this input and previous input was an operation delete the previous input
+        if(isInputNotANumber && !isInputDot) {
+            if(isPrevInputNotANumber) {
                 setOperation([...operation.slice(0, -1), input])
                 return
             }
         } 
+        // if previous input was an operation, don't allow a dot input
+        if(isPrevInputNotANumber && isInputDot)
+            return
+        // if previus input ends with a dot and new input is an operation remove the dot
+        if(isInputNotANumber && previousInput.endsWith('.')) {
+            const newPrevInput = previousInput.slice(0, -1) // dot is PART of the previous input
+            setOperation([...operation.slice(0, -1), newPrevInput, input])
+            return
+        }
+        // if previous input and the new input is a number or a dot concatanate the new input to the last input
+        if(!isPrevInputNotANumber && (!isInputNotANumber || isInputDot)) {
+            // if previous input already contains a dot, ignore the new dot
+            if(previousInput.includes('.') && isInputDot) 
+                return
+            const newAndPrev = `${previousInput}${input}`
+            setOperation([...operation.slice(0, -1), newAndPrev])
+            return
+        }
+
         setOperation([...operation, input])
     }
 
